@@ -1,0 +1,17 @@
+{
+    "name": "My Devcontainer",
+    "image": "node:14",
+    "extensions": [
+        "dbaeumer.vscode-eslint",
+    ],
+    "runArgs": [
+        "--init"
+    ],
+    "postCreateCommand": "npm install live-server -g && live-server --port=8080",
+    "forwardPorts": [
+        8080
+    ],
+    "settings": {
+        "terminal.integrated.visible": false
+    }
+}
