@@ -4,9 +4,9 @@
     "cpus": 2
   },
   "waitFor": "onCreateCommand",
-  "updateContentCommand": "",
+  "updateContentCommand": "python -m SimpleHTTPServer 8000",
   "postCreateCommand": "",
-  "postAttachCommand": "python -m SimpleHTTPServer 8000",
+  "postAttachCommand": "",
   "customizations": {
     "codespaces": {
       "openFiles": [
