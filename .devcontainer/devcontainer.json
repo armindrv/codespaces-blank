@@ -4,7 +4,7 @@
     "cpus": 2
   },
   "waitFor": "onCreateCommand",
-  "updateContentCommand": "python -m SimpleHTTPServer 8000",
+  "updateContentCommand": "python -m SimpleHTTPServer 3000",
   "postCreateCommand": "",
   "postAttachCommand": "",
   "customizations": {
