@@ -2,16 +2,31 @@
     "name": "My Devcontainer",
     "image": "node:14",
     "extensions": [
-        "dbaeumer.vscode-eslint",
+        "dbaeumer.vscode-eslint"
     ],
     "runArgs": [
         "--init"
     ],
     "postCreateCommand": "npm install live-server -g && live-server --port=8080",
+    "customizations": {
+        "vscode": {
+          "settings": {
+            "workbench.panel.opensMaximized": "never"
+          }
+        },
+        "codespaces": {
+          "openFiles": [
+            "index.html"
+          ]
+        }
+      },
+      "portsAttributes": {
+        "8080": {
+          "label": "Application",
+          "onAutoForward": "openPreview"
+        }
+      },
     "forwardPorts": [
         8080
-    ],
-    "settings": {
-        "terminal.integrated.visible": false
-    }
+    ]
 }
