@@ -1,32 +1,26 @@
 {
-    "name": "My Devcontainer",
-    "image": "node:14",
-    "extensions": [
-        "dbaeumer.vscode-eslint"
-    ],
-    "runArgs": [
-        "--init"
-    ],
-    "postCreateCommand": "npm install live-server -g && live-server --port=8080",
-    "customizations": {
-        "vscode": {
-          "settings": {
-            "workbench.panel.opensMaximized": "never"
-          }
-        },
-        "codespaces": {
-          "openFiles": [
-            "index.html"
-          ]
-        }
-      },
-      "portsAttributes": {
-        "8080": {
-          "label": "Application",
-          "onAutoForward": "openPreview"
-        }
-      },
-    "forwardPorts": [
-        8080
-    ]
+  "image": "node:14",
+  "hostRequirements": {
+    "cpus": 2
+  },
+  "waitFor": "onCreateCommand",
+  "updateContentCommand": "npm install live-server -g",
+  "postCreateCommand": "",
+  "postAttachCommand": {
+    "server": "live-server --port=3000"
+  },
+  "customizations": {
+    "codespaces": {
+      "openFiles": [
+        "index.html"
+      ]
+    }
+  },
+  "portsAttributes": {
+    "3000": {
+      "label": "Application",
+      "onAutoForward": "openPreview"
+    }
+  },
+  "forwardPorts": [3000]
 }
